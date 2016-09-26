@@ -32,7 +32,9 @@ Before the next session everyone should follow these basic steps:
 
 4.Create a gulpfile.js
 
-    Here is a example task that has a dependancy to sourcemaps, uglify and concat. This task take all the *.js files in the folder "app" and subfolders and uglify and concat them into one file write then write sourcemaps to it. The gulp procces runs the command in the first pipe and then deliver the result to the nex pipe 
+    Here is a example task that has a dependancy to sourcemaps, uglify and concat. 
+    This task take all the *.js files in the folder "app" and subfolders and uglify and concat them into one file write then write sourcemaps to it. 
+    The gulp procces runs the command in the first pipe and then deliver the result to the nex pipe 
     
 ```javascript
     gulp.task("concat", function () {
