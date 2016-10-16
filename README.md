@@ -58,11 +58,67 @@ Before the next session everyone should follow these basic steps:
 
 ## Session 2 -- JavaScript
 
-TODO: Add information about the next session.
+In this session we will build a small application that fetch data in JSON format from a file using ajax requests.
+
+From our last session we can bring down the environment from master. When we add files to the app folder the gulp watch should add the script tags that is needed in index.html. 
+
+1. Start by adding two files in "app/"(datacontext.js and view.js)
+    * Seperating integrations, such as database requests and service consumption, with view logic adds to seperation of concerns. We'll cover more on arcitechtural patterns when we go trought larger libraries/frameworks in later sessions.
+2. Create the datacontext
+    * Declare a function called "datacontext"
+    * use "reveling module pattern" and expose a public function in datacontext
+    ```javascript
+    function datacontext(){
+        
+        function getCourseData(){
+            ...
+        }
+
+        
+        return{
+            getCourseData:getCourseData
+        }
+    }
+    ```
+    * create an ajax request to fetch the data from the [course.json](../testApp/course.json) file
+    ```javascript
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+           
+        }
+        xhttp.open("GET", "../course.json", true);
+
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhttp.send();
+    ```
+    * Try to figure out a way to expose the returned data to the consumer of this method. Hint: "this" and "callbacks".
+3. Create the view handler in view.js
+    * create an IIFE to contain your logic and minimise polution of global scope.
+     ```javascript
+        (function(){
+            ...
+        })();
+    ```
+    * fetch a button from the DOM `var getDataBtn = document.getElementById('btn-getdata');`, you can aslo use `document.getElementsByClassName ` or `getElementsByTagName`, however then you also need to figure out a way to find your specific target from the array returned.
+    * Also fetch a content area like previous step. 
+    * add an event listner to your button with `getDataBtn.addEventListner('click',getCourseData)`
+    * create a function consuming your datacontext ajax request `datacontext().getCourseData``
+    * manipulate your content object by adding elements either by `content.innerHTML = '<div>+dataFromAjax+</div>` or `var table = document.createElement('table')` and build you structure up from the data. 
+4. Add elements for content and button to index.html
+
+5. Optional
+    1. create a table for all the sessions
+    2. expand the list of topics when clicking on a row.
+
+
+    
+
 
 # Course case
 
-Troughout the course we will build an application to display information about the course. The data is located in the [course.json](../cource.json)
+Troughout the course we will build an application to display information about the course. The data is located in the [course.json](../testApp/course.json)
 
 
     
