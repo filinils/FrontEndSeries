@@ -1,0 +1,24 @@
+
+button {
+    width: 50px;
+    height: 20px;
+}
+
+table,
+th,
+td {
+    width: 60%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{height: 30px;}
+
+td,
+.row {
+    padding-left: 20px;
+}
+
+#outputDiv {
+    margin-top: 50px;
+}
