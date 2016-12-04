@@ -113,13 +113,120 @@ From our last session we can bring down the environment from master. When we add
     2. expand the list of topics when clicking on a row.
 
 
+## Session 3 -- CSS   
+
+In this session, we will introduce CSS. The main goal is not to go through all the styling option there is in CSS, but propose and discuss a structure that can help in the process of styling a website. 
+The design we will style is uploaded to [Zeplin here] (http://zpl.io/2lqMCL). If you don't have a Zeplin account create.
+
+A big problem with CSS is that it is flexible, which makes that, it is about as many solution to a problem that there are developers. So, when a new developer comes along he or she tends to create a new solution instead of reusing existing solutions. In time CSS in an application grows into this huge unmanageable files that supposed to be sent out to every user or client who uses a system. The problem is not CSS but the lack of structures and methodologies to relies on. 
+
+My proposal to this problem is to use SMACSS as guideline to plan and maintain your CSS. Of course, there is other guidelines as well and feel free to explore and use other techniques to solve this task, but please try to find solutions that is easy to understand and communicate to others. 
+
+When you start, a project spends some time to plan your CSS and different areas. SMACSS define four areas:
     
+    1.Base
+        These are your base tags e.g. body, a, button, input and so on. 
+    2. layout
+        Identify the main areas of the site, header, sidebar content, navigation and so on.
+        name these ".layout-???" and place them into separate files so when you look through the html you will have a clear view of what is layout structures. Layouts will define areas where you can add modules. Their responsibility is to maintain that area not style modules. 
+    3. modules
+        These are your buttons, links, lists and list-items and so on. The idea of planning these ahead is to identify areas that can reuse the same modules. For instance if you have a button on a list-item can you use the same style for a button in a navigation? or do you have a tooltip when you hover a user name that can be used for a list-item. As a convention, be specific and name modules so it is obvious what the modules is e.g. button, listview, tab and so on this way you eliminate confusion when other developers look at your code. Name variation separated with "-" like tab-small, btn-large and. By actually defining btn-variation and not separation those like “. btn ".variation" it can be hard to know what ".variation" actually style, is it only btns or do they style something else? 
+
+Modules can have state for instanse a btn can be active, then the style for that should look like "btn-is-active".
+        here is an example of a button with state.
+           
+```css
+                . btn{
+                    color:#000;
+                    font:Arial;
+                    background-color:white;
+
+                }
+                .btn-large{
+                    width:200px;
+                    height:100px;
+                }
+                .btn-is-active{
+                    background-color:grey;
+
+                }
+
+```
+
+```html
+            <button class="btn btn-large btn-is-active">
+```
+
+SMACSS also define themes but we rarely use that so I won't explain it here. 
+
+Some pointers when styling responsively. There is basically two ways of creating responsive styles, breakpoints(media queries) and have a fluid design(percent based, also flex-box and new css grid applies to this) or a combination of these. There is much to take into consideration when creating a responsive design one of them is browser support for instance css grid is still experimental and not supported by most browsers. I have also seen som projects dividing styles for different screen sizes into sepperate files, loading only the file for the device that is used. I believe that if it is possible the best way is to have a fluid design allowing items to "fall" into place as screen sizes vary and styling unique module at the same place/file/section. Feel free to explore or come up with own ideas and bring them to the table on the next session. 
+
+Regarding CSS libraries I would say to use them in any place you want a generic look. If you use them try not to override it's behaviour. So, if you want a generic “look and feel” use libraries e.g. bootstrap. If you want a custom “look and feel” create your own structure, based on a good conventions. Otherwise you will spend a lot of time customizing the library instead of solving/developing a design. 
+
+
+Feel free to use use sass, but think about why you are using it when you are not writing your CSS based on a specific html structure and instead are focusing on modules.
+
+            
+
+
+    
+
+### Task
+
+    1.To get started with sass, continuing from the previous example, install gulp-sass by typing "npm install gulp-sass -save-dev"(remember to install in local or global scope if you want to run from command line) from the terminal in your project folder. 
+    2.Create folder structure:
+        To get started create the following folder structure, from your root app folder:
+        styles\
+            scss\
+                base\
+                layout\
+                modules\
+                theme\(optional)
+                main. scss
+            css\
+                main.css
+    3.Create a task that will compile your sass:
+```javascript
+        gulp.task('sass', function () {
+            return gulp.src('./styles/sass/main.scss')
+                .pipe(sass().on('error', sass.logError))
+                .pipe(gulp.dest('./styles/css'));
+            });
+```
+Figure out your src file and output. Also, check your "index" task to include css as well:
+```javascript
+            gulp. task('index', function () {
+                var target = gulp.src('index.html');
+                    var sources = gulp.src(['styles/css/**/*.css','app/**/*.js'], {read: false});
+                    
+                    return target.pipe(inject(sources))
+                    .pipe(gulp.dest('./'));
+                });
+```
+    4. Create a first layout file "layout-head.scss" under the layout folder.
+    5. Create an import statement in main.scss "@import './layout/layout-header';" 
+    6. Try your setup
+    7. Start by defining layouts eg. head, left-sidebar. right-sidebar etc
+    8. Define the modules
+    9. Implement the design! :) 
+
+
+Try to stay true to the [design](http://zpl.io/2lqMCL). Also, try to add and style a list in the content area and populate it with the [course data](../testApp/course.json).
+
+If you find time, try to make the design responsive or at least prepare to discuss how it can be done. 
+
+
+
+
+
+
+
+
 
 
 # Course case
 
-Troughout the course we will build an application to display information about the course. The data is located in the [course.json](../testApp/course.json)
-
+Throughout the course we will build an application to display information about the course. The data is in the [course. json](../testApp/course.json)
 
     
 
