@@ -1,0 +1,88 @@
+{
+    "course": "Front-end",
+    "sessions": [
+        {
+            "name": "Dev-Ops",
+            "subjects": [
+                {
+                    "name": "Task mangers"
+                },
+                {
+                    "name": "nodeJs"
+                }
+            ]
+        },
+        {
+            "name": "Javascript",
+            "subjects": [
+                {
+                    "name": "Object"
+                },
+                {
+                    "name": "Ajax"
+                }
+                ,
+                {
+                    "name": "EventHandling"
+                }
+                ,
+                {
+                    "name": "Document object model(DOM) connections"
+                }
+            ]
+        },
+        {
+            "name": "Css",
+            "subjects": [
+                {
+                    "name": "Framework"
+                },
+                {
+                    "name": "preprocessors"
+                }
+                ,
+                {
+                    "name": "Architechture"
+                }
+            ]
+        },
+        {
+            "name": "Angular2",
+            "subjects": [
+                {
+                    "name": "Components"
+                },
+                {
+                    "name": "Directives"
+                }
+                ,
+                {
+                    "name": "Injecables/Service"
+                }
+                ,
+                {
+                    "name": "Reactive components(RxJS)"
+                }
+            ]
+        },
+        {
+            "name": "React",
+            "subjects": [
+                {
+                    "name": "Components"
+                },
+                {
+                    "name": "React route"
+                },
+                {
+                    "name": "JSX"
+                }
+                ,
+                {
+                    "name": "Redux/Flux"
+                }
+            ]
+        },
+        {}
+    ]
+}
