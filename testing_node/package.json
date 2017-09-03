@@ -1,0 +1,21 @@
+{
+  "name": "testing_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "karma": "karma start karma.conf.js"
+  },
+  "author": "Glenn Wedin <glenn.wedin@gmail.com> (http://www.wedinweb.no)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0",
+    "supertest": "^3.0.0"
+  }
+}
