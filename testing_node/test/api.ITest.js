@@ -1,13 +1,12 @@
 const request = require("supertest"),
 express = require("express"),
 chai = require("chai"),
+expect = chai.expect,
 app = express(),
 api = require('../routers/api');
 
 app.use('/api', api);
 app.listen(3000);
-
-var expect = chai.expect;
 
 describe("Test api endpoints", () => {
 	it("/api/persons", () => {
