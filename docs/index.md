@@ -1,5 +1,10 @@
 # FrontEndSeries
 
+## Introduction
+
+This repo will hold all assignments as well as excersice files, start projects and examples. It is completly open to all contributers so consider this as a playground and feel free to improve or create new files. The level of complexity is up the editors.
+
+
 ## Session 1 -- node and task management
 
 As a first step in this course we will go trough task management and the basics of handling javascript projects in node. 
@@ -227,14 +232,3 @@ If you find time, try to make the design responsive or at least prepare to discu
 # Course case
 
 Throughout the course we will build an application to display information about the course. The data is in the [course. json](../testApp/course.json)
-
-    
-
-
-
-            
-
-
-        
-
- 
