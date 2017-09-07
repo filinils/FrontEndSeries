@@ -1,6 +1,4 @@
-# Node and front end development environment
-
-## Session 1 -- node and task management
+# 1. Node and front end development environment
 
 As a first step in this course we will go trough Node as a development environment and the basics of handling web sites and javascript projects. 
 
