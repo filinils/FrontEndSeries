@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "karma": "karma start karma.conf.js"
+    "start": "node index.js",
+    "test": "mocha"
   },
   "author": "Glenn Wedin <glenn.wedin@gmail.com> (http://www.wedinweb.no)",
   "license": "MIT",

@@ -1,17 +1,17 @@
 [
-    {
+	{
 		"name": "Nils",
 		"age": 32,
-		"email": null
-    },
-    {
+		"email": "test2@capgemini.com"
+	},
+	{
 		"name": "Nils",
 		"age": 32,
-		"email": null
-    },
-    {
+		"email": "nils@capgemini.com"
+	},
+	{
 		"name": "Nils",
 		"age": 32,
-		"email": null
+		"email": "test@capgemini.com"
 	}
 ]
