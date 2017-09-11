@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Nils",
+		"age": 32,
+		"email": "test2@capgemini.com"
+	},
+	{
+		"name": "Nils",
+		"age": 32,
+		"email": "nils@capgemini.com"
+	},
+	{
+		"name": "Nils",
+		"age": 32,
+		"email": "test@capgemini.com"
+	}
+]
