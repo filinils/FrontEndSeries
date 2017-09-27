@@ -20,6 +20,7 @@ As a first step in this course we will go through Node as a development environm
 
 4. Navigate to "server" folder
     1. run "npm install"
+    2. Run "npm start"
 
     This should start a simple example express server.
    
