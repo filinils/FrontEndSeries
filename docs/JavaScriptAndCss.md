@@ -5,7 +5,8 @@ In this session we will build a small application that fetch data in JSON format
 From our last session we can bring down the environment from master. When we add files to the app folder the gulp watch should add the script tags that is needed in index.html. 
 
 1. Start by adding two files in "app/"(datacontext.js and view.js)
-    * Seperating integrations, such as database requests and service consumption, with view logic adds to seperation of concerns. We'll cover more on arcitechtural patterns when we go trought larger libraries/frameworks in later sessions.
+    * Separating integrations, such as database requests and service consumption, with view logic adds to separation of concerns. We'll cover more on architechtural patterns when we go trough larger libraries/frameworks in later sessions.
+
 2. Create the datacontext
     * Declare a function called "datacontext"
     * use "reveling module pattern" and expose a public function in datacontext
@@ -50,7 +51,13 @@ From our last session we can bring down the environment from master. When we add
     * manipulate your content object by adding elements either by `content.innerHTML = '<div>+dataFromAjax+</div>` or `var table = document.createElement('table')` and build you structure up from the data. 
 4. Add elements for content and button to index.html
 
-5. Optional
+5. Add simple client side routing, i.e. functionality that aligns the app state with the URL and vice versa without reloading the page.
+    * read and write urls using the window.location object as seen [here](http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash#hash-based-routing)
+    * connect that control with the right application states - i.e. your routes
+    * use the [History api](https://developer.mozilla.org/en-US/docs/Web/API/History_API) to align the history
+    * But first: try understand client side routing from these examples [a-javascript-router-in-20-lines](http://joakim.beng.se/blog/posts/a-javascript-router-in-20-lines.html) and [deep-dive-into-client-side-routing-navigo-pushstate-hash](http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash).
+
+6. Optional
     1. create a table for all the sessions
     2. expand the list of topics when clicking on a row.
 
@@ -69,7 +76,7 @@ When you start, a project spends some time to plan your CSS and different areas.
     3. modules
         These are your buttons, links, lists and list-items and so on. The idea of planning these ahead is to identify areas that can reuse the same modules. For instance if you have a button on a list-item can you use the same style for a button in a navigation? or do you have a tooltip when you hover a user name that can be used for a list-item. As a convention, be specific and name modules so it is obvious what the modules is e.g. button, listview, tab and so on this way you eliminate confusion when other developers look at your code. Name variation separated with "-" like tab-small, btn-large and. By actually defining btn-variation and not separation those like “. btn ".variation" it can be hard to know what ".variation" actually style, is it only btns or do they style something else? 
 
-Modules can have state for instanse a btn can be active, then the style for that should look like "btn-is-active".
+Modules can have state for instance a btn can be active, then the style for that should look like "btn-is-active".
         here is an example of a button with state.
            
 ```css
