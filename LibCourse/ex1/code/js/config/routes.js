@@ -1,19 +1,28 @@
 import App from "./../components/App";
 import Home from "./../components/pages/Home";
+import Footer from "./../components/sections/footer/Footer";
 
 const routes = [
     {
-        id:1,
+        id: 1,
         path: "/",
         title: "App",
         component: App,
         routes: [
             {
-                id:2,
+                id: 2,
                 path: "/Home",
                 component: Home,
                 title: "Home",
-                routes: []
+                routes: [
+                    {
+                        id: 3,
+                        path: "/Footer",
+                        component: Footer,
+                        title: "Footer",
+                        routes: []
+                    }
+                ]
             }
         ]
     }
