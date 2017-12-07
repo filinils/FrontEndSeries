@@ -1,13 +1,18 @@
 import App from "./../components/App";
+import Home from "./../components/pages/Home";
 
 const routes = [
     {
+        id:1,
         path: "/",
+        title: "App",
         component: App,
         routes: [
             {
-                path: "/sub",
-                component: App,
+                id:2,
+                path: "/Home",
+                component: Home,
+                title: "Home",
                 routes: []
             }
         ]

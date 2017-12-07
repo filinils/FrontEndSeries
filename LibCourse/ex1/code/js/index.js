@@ -4,7 +4,7 @@ import createBrowserHistory from "history/createBrowserHistory";
 
 import { AppContainer } from "react-hot-loader";
 import routes from "./config/routes";
-import RouteWithSubRoutes from "./config/RoutesWithSubRoutes";
+import RouteWithSubRoutes from "./config/RouteWithSubRoutes";
 import { Router } from "react-router";
 
 require("../style/index.scss");
