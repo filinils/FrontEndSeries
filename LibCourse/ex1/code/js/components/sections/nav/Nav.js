@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 
 import routes from "../../../config/routes";
 
+const el = <div />;
+
 class Nav extends React.Component {
     constructor(props) {
         super(props);
         this.links = [];
+
+        this.el = <div />;
+        let el = <div />;
     }
-    renderLinks(route) {
+    renderLinks(route, isFirst) {
+        if (isFirst) this.links = [];
         this.links.push(
             <Link key={route.id} to={route.path}>
                 {route.title}
@@ -29,7 +35,7 @@ class Nav extends React.Component {
             <div>
                 {this.el}
                 {routes.map(route => {
-                    return this.renderLinks(route).map(link => {
+                    return this.renderLinks(route, true).map(link => {
                         return <link.type {...link.props} />;
                     });
                 })}

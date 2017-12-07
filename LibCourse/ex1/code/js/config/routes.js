@@ -14,15 +14,7 @@ const routes = [
                 path: "/Home",
                 component: Home,
                 title: "Home",
-                routes: [
-                    {
-                        id: 3,
-                        path: "/Footer",
-                        component: Footer,
-                        title: "Footer",
-                        routes: []
-                    }
-                ]
+                routes: []
             }
         ]
     }
